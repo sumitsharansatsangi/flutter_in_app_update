@@ -2,14 +2,14 @@ group 'de.ffuf.in_app_update'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '2.2.10'
+    ext.kotlin_version = '2.2.21'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.13.0'
+        classpath 'com.android.tools.build:gradle:8.13.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -29,15 +29,15 @@ android {
         namespace 'de.ffuf.in_app_update'
     }
 
-    compileSdkVersion 36
+    compileSdk 36
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '21'
     }
 
     sourceSets {
@@ -46,7 +46,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdk 21
     }
 
     lintOptions {
@@ -55,9 +55,6 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.google.android.play:app-update:2.1.0'
-
     // For Kotlin users, also add the Kotlin extensions library for Play In-App Update:
     implementation 'com.google.android.play:app-update-ktx:2.1.0'
 
